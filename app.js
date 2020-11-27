@@ -1,9 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+require('dotenv/config')
+const mongoose = require('mongoose');
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 app.post('/', (req, res) => {
     // Read the variables sent via POST from our API
@@ -45,5 +49,10 @@ app.post('/', (req, res) => {
     // Send the response back to the API
     res.set('Content-Type: text/plain');
     res.send(response);
-    
+
 });
+
+let PORT = process.env.PORT || 80;
+app.listen(PORT, () =>{
+  console.log("Listening on port : ", PORT);
+})
