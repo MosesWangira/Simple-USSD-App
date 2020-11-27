@@ -9,7 +9,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-app.post('/', (req, res) => {
+app.get('/' (req, res) => {
+  res.send("Hello ussd");
+})
+
+app.post('/ussd', (req, res) => {
     // Read the variables sent via POST from our API
     const {
         sessionId,
