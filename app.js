@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
   res.send("Hello ussd");
 })
 
